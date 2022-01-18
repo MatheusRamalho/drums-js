@@ -1,6 +1,6 @@
-## CLOCK JS
+## DRUMS JS
 
-Projeto de um relógio analógico e um digital feitos com html, sass e javaScript.
+Projeto de uma bateria online, feita com html, sass e javaScript.
 
 #### SASS
 sass src/sass/style.scss assets/css/style.css --style compressed --no-source-map
