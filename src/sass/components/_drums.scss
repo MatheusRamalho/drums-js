@@ -1,0 +1,82 @@
+@use '../abstracts/fonts' as font;
+@use '../abstracts/colors' as color;
+@use '../abstracts/spaces' as space;
+@use '../abstracts/borders' as border;
+
+.drums__title {
+    text-align: center;
+}
+
+.drums__keys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.625rem;
+
+    margin: space.$space32 0;
+
+    .drums__key {
+        width: 5rem;
+        height: 5rem;
+        border-radius: border.$radiiSM;
+        border: border.$bwThick solid color.$colorsBlack1;
+        transition: 0.5s background-color ease;
+
+        font-size: font.$fsLG;
+        font-weight: font.$fwExtraBold;
+        color: color.$colorsWhite;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.active {
+            border: border.$bwThin solid color.$colorsYellow0;
+            background-color: color.$colorsYellow1;
+        }
+    }
+}
+
+.drums__composer {
+    width: 16.25rem;
+    margin-top: space.$space24;
+
+    input {
+        width: 100%;
+        height: 3rem;
+        padding: space.$space8 space.$space16;
+        border: none;
+        border-radius: border.$radiiSM;
+        background-color: color.$colorsBlack1;
+
+        font-size: font.$fsMD;
+        text-transform: uppercase;
+        color: color.$colorsWhite;
+        outline: none;
+
+        &::placeholder {
+            font-size: font.$fsSM;
+            text-transform: initial;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+        margin-top: space.$space16;
+        padding: space.$space16 space.$space24;
+        border: none;
+        border-radius: border.$radiiSM;
+        background-color: color.$colorsYellow1;
+        transition: 1s background ease-in-out;
+
+        font-size: font.$fsLG;
+        font-weight: font.$fwSemiBold;
+        color: color.$colorsBlack1;
+        text-align: center;
+
+        &:hover {
+            background-color: color.$colorsYellow2;
+        }
+    }
+}

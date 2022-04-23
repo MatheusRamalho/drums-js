@@ -1,0 +1,69 @@
+@use './fonts'as font;
+@use './colors'as color;
+@use './breakpoints'as break;
+
+// CSS RESET...
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+@media (max-width: break.$laptopXS) {
+    html {
+        font-size: 93, 75%;
+    }
+}
+
+@media (max-width: break.$tabletSM) {
+    html {
+        font-size: 87, 5%;
+    }
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: color.$colorsBlack2;
+
+    font-family: font.$ffDefault;
+    font-weight: font.$fwLight;
+    font-size: font.$fsMD;
+    color: color.$colorsGray2;
+    line-height: font.$lhTall;
+    text-transform: none;
+}
+
+img,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: color.$colorsGray0;
+    text-decoration: none;
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, small, address {
+    overflow-wrap: break-word; // Para que o texto quebre...
+    hyphens: auto; // Adiciona hífen...
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+
+    font-family: font.$ffHighlight;
+    font-weight: font.$fwExtraBold;
+    color: color.$colorsYellow2;
+    line-height: calc(1em + 1rem);
+}
+
+h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
