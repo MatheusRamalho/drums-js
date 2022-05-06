@@ -1,0 +1,82 @@
+@use '../abstracts/fonts' as font;
+@use '../abstracts/colors' as color;
+@use '../abstracts/spacings' as space;
+@use '../abstracts/borders' as border;
+
+.drums__title {
+    text-align: center;
+}
+
+.drums__keys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.625rem;
+
+    margin: space.$space-32 0;
+
+    .drums__key {
+        width: 5rem;
+        height: 5rem;
+        border-radius: border.$radii-sm;
+        border: border.$bw-thick solid color.$color-black-50;
+        transition: 0.5s background-color ease;
+
+        font-size: font.$fs-lg;
+        font-weight: font.$fw-extra-bold;
+        color: color.$color-white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.active {
+            border: border.$bw-thin solid color.$color-primary;
+            background-color: color.$color-secondary;
+        }
+    }
+}
+
+.drums__composer {
+    width: 16.25rem;
+    margin-top: space.$space-24;
+
+    input {
+        width: 100%;
+        height: 3rem;
+        padding: space.$space-8 space.$space-16;
+        border: none;
+        border-radius: border.$radii-sm;
+        background-color: color.$color-black-50;
+
+        font-size: font.$fs-md;
+        text-transform: uppercase;
+        color: color.$color-white;
+        outline: none;
+
+        &::placeholder {
+            font-size: font.$fs-sm;
+            text-transform: initial;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+        margin-top: space.$space-16;
+        padding: space.$space-16 space.$space-24;
+        border: none;
+        border-radius: border.$radii-sm;
+        background-color: color.$color-secondary;
+        transition: 1s background ease-in-out;
+
+        font-size: font.$fs-lg;
+        font-weight: font.$fw-semi-bold;
+        color: color.$color-black-50;
+        text-align: center;
+
+        &:hover {
+            background-color: color.$color-tertiary;
+        }
+    }
+}
